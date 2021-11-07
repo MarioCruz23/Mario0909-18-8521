@@ -14,8 +14,15 @@ class CreateCriptomonedaTable extends Migration
     public function up()
     {
         Schema::create('criptomoneda', function (Blueprint $table) {
-            $table->id();
+            $table->engine="InnoDB";
+            $table->bigIncrements('id');
+            $table->string('logotipo');
+            $table->string('nombre');
+            $table->string('precio');
+            $table->string('descripcion');
+            $table->bigInteger('lenguaje_id')->unsigned();
             $table->timestamps();
+            $table->foreign('lenguaje_id')->references('id')->on('lenguajeprogramacion')->onDelete("cascade");
         });
     }
 
