@@ -34,4 +34,13 @@ class criptoController extends Controller
         \App\Models\criptomoneda::destroy($id);
         return back()->with('datoEliminado','El dato ha sido eliminado');
     }
+    public function editform($id){
+        $cripto = \App\Models\criptomoneda::findOrFail($id);
+        return view('criptomoneda.editform', compact('cripto'));
+    }
+    public function edit(Request $request, $id){
+        $datocripto = request()->except((['_token','_method']));
+        \App\Models\criptomoneda::where('id', '=', $id)->update($datocripto);
+        return back()->with('datoModificado','Dato fue modificado');
+    }
 }

@@ -29,7 +29,9 @@
                         <td>{{ $relacion->descripcion_ }}</td>
                         <td>{{ $relacion->lenguaje_id }}</td>
                         <td>
-
+                            <a href="{{ route ('editform', $relacion->id) }}" class="btn btn-primary mb-1 ">
+                            <i class="fas fa-pencil-alt "></i>
+                            </a>
                             <form action="{{ route('delete', $relacion->id) }}" method="POST">
                                 @csrf @method('DELETE')
                                 <button type="submit" onclick="return confirm('¿borrar?');" class="btn btn-danger">

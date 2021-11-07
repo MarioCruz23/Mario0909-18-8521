@@ -19,3 +19,5 @@ Route::get('/form2', 'lenguajeController@lenguajeform');
 Route::post('/save', 'criptoController@save')->name('save');
 Route::post('/save2', 'lenguajeController@save2')->name('save2');
 Route::delete('/delete/{id}','criptoController@delete')->name('delete');
+Route::get('/editform/{id}','criptoController@editform')->name('editform');
+Route::patch('/edit/{id}','criptoController@edit')->name('edit');
