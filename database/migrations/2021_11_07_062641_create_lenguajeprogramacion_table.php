@@ -13,7 +13,7 @@ class CreateLenguajeprogramacionTable extends Migration
      */
     public function up()
     {
-        Schema::create('lenguajeprogramacion', function (Blueprint $table) {
+        Schema::create('lenguajeprogramacions', function (Blueprint $table) {
             $table->engine="InnoDB";
             $table->bigIncrements('id');
             $table->string('descripcion');
@@ -27,6 +27,6 @@ class CreateLenguajeprogramacionTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lenguajeprogramacion');
+        Schema::dropIfExists('lenguajeprogramacions');
     }
 }

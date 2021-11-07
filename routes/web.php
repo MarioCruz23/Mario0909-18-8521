@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('criptomoneda.listar');
 });
+Route::get('/form', 'criptoController@criptoform');
+Route::get('/form2', 'lenguajeController@lenguajeform');
+Route::post('/save', 'criptoController@save')->name('save');
+Route::post('/save2', 'lenguajeController@save2')->name('save2');

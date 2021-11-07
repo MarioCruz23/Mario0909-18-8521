@@ -13,16 +13,16 @@ class CreateCriptomonedaTable extends Migration
      */
     public function up()
     {
-        Schema::create('criptomoneda', function (Blueprint $table) {
+        Schema::create('criptomonedas', function (Blueprint $table) {
             $table->engine="InnoDB";
             $table->bigIncrements('id');
             $table->string('logotipo');
             $table->string('nombre');
             $table->string('precio');
-            $table->string('descripcion');
+            $table->string('descripcion_');
             $table->bigInteger('lenguaje_id')->unsigned();
             $table->timestamps();
-            $table->foreign('lenguaje_id')->references('id')->on('lenguajeprogramacion')->onDelete("cascade");
+            $table->foreign('lenguaje_id')->references('id')->on('lenguajeprogramacions')->onDelete("cascade");
         });
     }
 
@@ -33,6 +33,6 @@ class CreateCriptomonedaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('criptomoneda');
+        Schema::dropIfExists('criptomonedas');
     }
 }

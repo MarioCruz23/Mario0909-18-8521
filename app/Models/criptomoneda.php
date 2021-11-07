@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class criptomoneda extends Model
 {
     use HasFactory;
+    
+    public function lenguajeprogramacion(){
+        return $this->hasMany(lenguajeprogramacion::class, 'id');
+    }
 }
