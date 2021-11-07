@@ -2,6 +2,11 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-10">
+            @if(session('datoEliminado'))
+            <div class="alert alert-success">
+                {{ session('datoEliminado') }}
+            </div>
+            @endif
             <table class="table table-success table-striped table-hover text-center">
                 <thead>
                     <tr>
@@ -23,6 +28,15 @@
                         <td>{{ $relacion->precio }}</td>
                         <td>{{ $relacion->descripcion_ }}</td>
                         <td>{{ $relacion->lenguaje_id }}</td>
+                        <td>
+
+                            <form action="{{ route('delete', $relacion->id) }}" method="POST">
+                                @csrf @method('DELETE')
+                                <button type="submit" onclick="return confirm('¿borrar?');" class="btn btn-danger">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </form>   
+                        </td>
                     </tr>
                         @endforeach
                 </tbody>

@@ -58,4 +58,5 @@
             </div>
         </div>
     </div>
+    <a class="btn btn-link" href="{{ url('/') }}">volver</a>
 </div>

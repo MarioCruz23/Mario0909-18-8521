@@ -30,4 +30,8 @@ class criptoController extends Controller
         \App\Models\criptomoneda::insert($criptodata);
         return back()->with('datosguardados','Dato Guardado');
     }
+    public function delete($id){
+        \App\Models\criptomoneda::destroy($id);
+        return back()->with('datoEliminado','El dato ha sido eliminado');
+    }
 }
