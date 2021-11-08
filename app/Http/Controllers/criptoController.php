@@ -36,7 +36,8 @@ class criptoController extends Controller
     }
     public function editform($id){
         $cripto = \App\Models\criptomoneda::findOrFail($id);
-        return view('criptomoneda.editform', compact('cripto'));
+        $lenguajeprogramacions= lenguajeprogramacion::all();
+        return view('criptomoneda.editform', compact('cripto', 'lenguajeprogramacions'));
     }
     public function edit(Request $request, $id){
         $datocripto = request()->except((['_token','_method']));
