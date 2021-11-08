@@ -53,7 +53,7 @@
                         <td>{{ $relacion->nombre }}</td>
                         <td>{{ $relacion->precio }}</td>
                         <td>{{ $relacion->descripcion_ }}</td>
-                        <td>{{ $relacion->lenguaje_id }}</td>
+                        <td>{{ $relacion->lenguajeprogramacion->descripcion}}</td>
                         <td>
                             <a href="{{ route ('editform', $relacion->id) }}" class="btn btn-primary mb-1 ">
                             <i class="fas fa-pencil-alt "></i>

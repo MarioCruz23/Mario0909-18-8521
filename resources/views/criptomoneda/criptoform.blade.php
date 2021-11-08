@@ -74,7 +74,7 @@
                                 <select name="lenguaje_id" class="form-control" >
                                     <option value="">--Seleccione--</option>
                                     @foreach( $lenguajeprogramacions as $lenguajeprogramacion)
-                                        <option value="{{$lenguajeprogramacion->id}}"> {{$lenguajeprogramacion->id}}  </option>
+                                        <option value="{{$lenguajeprogramacion->id}}"> {{$lenguajeprogramacion->descripcion}}  </option>
                                     @endforeach
                                 </select>
                             </div>

@@ -10,6 +10,6 @@ class criptomoneda extends Model
     use HasFactory;
     
     public function lenguajeprogramacion(){
-        return $this->hasMany(lenguajeprogramacion::class, 'id');
+        return $this->belongsTo(lenguajeprogramacion::class, 'lenguaje_id');
     }
 }
